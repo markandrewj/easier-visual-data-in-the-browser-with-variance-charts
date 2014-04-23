@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+	<head>
+		<link href='http://fonts.googleapis.com/css?family=Tauri' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+
+	<div class="container">
+			<csv id="yearly-bacons">
+			  year,bacons
+			  1990,20
+			  1995,231
+			  2000,639
+			  2005,1625
+			  2010,7000
+			  2015,16000
+			</csv>
+
+			<div class="bacon-chart">
+			  <h3>Bacon data</h3>
+				<chart data="#yearly-bacons" scale-y-linear="0 20000" scale-y-linear="1990 2015">
+				  <guide-x></guide-x>
+				  <guide-y></guide-y>
+				  <repeat>
+				    <annotation class="bottom">{{year}}</annotation>
+				    <annotation class="tooltip" map-position="bacons">{{bacons}}</annotation>
+				    <bar map-length="bacons"></bar>
+				  </repeat>
+				</chart>
+				<!-- <chart data="#yearly-bacons" scale-y-linear="0 20000" scale-x-linear="1990 2015">
+				  <guide-x></guide-x>
+				  <guide-y></guide-y>
+				  <repeat>
+				    <annotation class="bottom">{{year}}</annotation>
+				    <annotation class="tooltip" map-position="bacons">{{bacons}}</annotation>
+				    <point map-xy="year bacons"></point>
+				  </repeat>
+				</chart> -->
+			</div>
+	</div>
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>	
+	<script src="http://variancecharts.com/cdn/variance-noncommercial-standalone-9bc0f5e.min.js" charset="UTF-8"></script>
+	</body>
+</html>
